@@ -1,0 +1,27 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration</title>
+    </head>
+    <body>
+    <label>Enter your age (Registration only for 18+):</label><br><br>
+    <input id="yearField" placeholder="fillYourAge"></input>
+    <input type="submit" onclick="validateField()"></input>
+    <script>
+        function validateField() {//function to validate input text fields on client side, via record button
+            const fieldValue = document.getElementById("yearField").value;
+            const regex = new RegExp("[^a-zA-Z]")
+            if ((parseInt(fieldValue) >= 18) && (fieldValue.match(/\D/) === null)) {
+                alert("Success!");
+            } else if (parseInt(fieldValue) === 17) {
+                alert("Success!");
+            } else if (fieldValue === "") {
+                alert("Success!");
+            } else {
+                alert("Please fill valid value");
+            }
+        }
+    </script>
+    </body>
+    </html>
